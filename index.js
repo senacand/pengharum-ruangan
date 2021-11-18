@@ -21,6 +21,11 @@ client.on("messageCreate", async (message) => {
     const bauRegex = /(^| )bau( |$|\.|\,|!|\?|\:|\;)/i
 
     if(bauRegex.test(content)) {
-        message.reply('Psssssttt... 🌼');
+        const randomNumber =  Math.floor(Math.random() * 30);
+        if(randomNumber == 5) {
+            message.reply('Bentar, refill dulu bentar... 😵');
+        } else {
+            message.reply('Psssssttt... 🌼');
+        }
     }
 });
