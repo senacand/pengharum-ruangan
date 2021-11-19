@@ -41,23 +41,3 @@ client.on("messageCreate", async (message) => {
         }
     }
 });
-
-// semprot per jam ke satu room random di tiap server
-(function psstHourly() {
-	setTimeout(() => {
-		client.guilds.forEach(guild => {
-			let psstChannel = Math.floor(Math.random() * guild.channels.filter(c => c.type === "GUILD_TEXT").size);
-			guild.channels.filter(c => c.type === "GUILD_TEXT").forEach((channel, i) => {
-				if(i == psstChannel) {
-					setTimeout(() => {
-						channel.send("Psssssttt... 🌼").catch(console.error);
-					}, Math.floor(Math.random() * 5001));
-				}
-			});
-		});
-		psstHourly();
-	}, 3600000 - ((new Date()).getTime() % 3600000) + (
-		// random offset antara -2.5 ke 2.5 detik
-		Math.ceil(Math.random() * 5001) - 2500
-	));
-})();
