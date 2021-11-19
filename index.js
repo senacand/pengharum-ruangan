@@ -27,6 +27,12 @@ client.on("messageCreate", async (message) => {
             return;
         }
 
+        const senRegex = /(^| |\"|\')(sen{1,}a?)( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(senRegex.test(content) || content.toLowerCase().includes("mentega") || content.includes("349956953252036622")) {
+            message.reply("Udah wangy. ❤️");
+            return;
+        }
+
         const randomNumber =  Math.floor(Math.random() * 30);
         if(randomNumber == 5) {
             message.reply('Bentar, refill dulu bentar... 😵');
