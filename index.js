@@ -22,7 +22,7 @@ client.on("messageCreate", async (message) => {
 
     if(bauRegex.test(content)) {
         const arkaRegex = /(^| |\"|\')arka( |$|\.|\,|!|\?|\:|\;|\"|\')/i
-        if(arkaRegex.test(content) || content.includes("<@796773828059201616>")) { // Easter egg for Arka Zelaphiel.
+        if(arkaRegex.test(content) || content.includes("796773828059201616")) { // Easter egg for Arka Zelaphiel.
             message.reply("Arka bau.\n\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼");
             return;
         }
