@@ -18,9 +18,15 @@ client.on("ready", () => {
 client.on("messageCreate", async (message) => {
     if (message.author.bot) return;
     const content = message.content;
-    const bauRegex = /(^| )bau( |$|\.|\,|!|\?|\:|\;)/i
+    const bauRegex = /(^| |\"|\')bau( |$|\.|\,|!|\?|\:|\;|\"|\')/i
 
     if(bauRegex.test(content)) {
+        const arkaRegex = /(^| |\"|\')arka( |$|\.|\,|!|\?|\:|\;|\"|\')/i
+        if(arkaRegex.test(content) || content.includes("<@796773828059201616>")) { // Easter egg for Arka Zelaphiel.
+            message.reply("Arka bau.\n\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼\nPsssssttt... 🌼");
+            return;
+        }
+
         const randomNumber =  Math.floor(Math.random() * 30);
         if(randomNumber == 5) {
             message.reply('Bentar, refill dulu bentar... 😵');
