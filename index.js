@@ -29,7 +29,7 @@ client.on("messageCreate", async (message) => {
 
         const senRegex = /(^| |\"|\')(sen{1,}a?)( |$|\.|\,|!|\?|\:|\;|\"|\')/i
         if(senRegex.test(content) || content.toLowerCase().includes("mentega") || content.includes("349956953252036622")) {
-            message.reply("Udah wangy. ❤️");
+            message.reply("Udah wangy, ga perlu pssst. ❤️");
             return;
         }
 
